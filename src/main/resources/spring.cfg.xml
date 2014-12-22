@@ -10,5 +10,8 @@
             
     <bean id="userService"
           class="com.zyazeva.valuation.service.implementation.UserServiceImplementation"/>
+    
+    <bean id="projectService"
+          class="com.zyazeva.valuation.service.implementation.ProjectServiceImplementation"/>
 
 </beans>

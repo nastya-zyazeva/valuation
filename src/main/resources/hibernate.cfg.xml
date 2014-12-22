@@ -10,5 +10,6 @@
     <property name="hibernate.show_sql">true</property>
     
     <mapping class="com.zyazeva.valuation.model.User" />
+    <mapping class="com.zyazeva.valuation.model.Project" />
   </session-factory>
 </hibernate-configuration>

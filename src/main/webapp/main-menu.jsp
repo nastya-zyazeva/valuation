@@ -43,9 +43,9 @@
                 <tr>
                     <td>Statistic</td>
                     <td>
-                        <form action="stat-menu.jsp">
+                        <form action="projects-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
-                                <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Statistic menu
+                                <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Projects menu
                             </button> 
                         </form>
                     </td>

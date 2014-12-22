@@ -1,11 +1,11 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
+<%@page import="com.zyazeva.valuation.model.Project"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.zyazeva.valuation.service.UserService"%>
-<%@page import="com.zyazeva.SpringFactory"%>
+<%@page import="com.zyazeva.valuation.service.ProjectService"%>
 <%@page import="com.zyazeva.valuation.model.User"%>
-<%@page import="com.zyazeva.SessionBean"%>
+<%@page import="com.zyazeva.SpringFactory"%>
 <%@page import="com.zyazeva.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,8 +16,7 @@
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <script src="resources/js/bootstrap.min.js"></script>
         <link href="resources/css/valuation.css" rel="stylesheet">
-
-        <title>Users menu page</title>
+        <title>Projects menu Page</title>
     </head>
     <body>
         <div class="container">
@@ -42,41 +41,47 @@
             </h4>
             <br>
 
+
             <table class="table table-striped">
                 <tr>
                     <th>User id</th>
                     <th>Name</th>
-                    <th>Login</th>
-                    <th>Registration date</th>
-                    <th>Administrator</th>
+                    <th>Date</th>
+                    <th>Status</th>
                 </tr>
                 <%
-                    UserService userService = (UserService) SpringFactory.getspringApplicationContext().getBean("userService");
-                    List<User> usersList = new ArrayList<>();
-                    usersList = userService.getAllUsers();
+                    ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
+                    List<Project> projectsList = new ArrayList<>();
+                    projectsList = projectService.getAllProjects();
+                    List<Project> currentUserProjectsList = new ArrayList<>();
+                    
+                    for (int i = 0; i < projectsList.size(); i++) {
+                        Project project = projectsList.get(i);
+                        if (project.getUserId() == user.getId()){
+                            currentUserProjectsList.add(project);
+                        }
+                    }
+                    
 
-                    for (int i = 0; i < usersList.size(); i++) {
-                        user = usersList.get(i);
-                        if (user != null) {
+                    for (int i = 0; i < currentUserProjectsList.size(); i++) {
+                        Project project = currentUserProjectsList.get(i);
+                        if (project != null) {
                             out.write("<tr>");
-                            int userId = user.getId();
-                            out.write("<td>" + userId + "</td>");
+                            int projectId = project.getId();
+                            out.write("<td>" + projectId + "</td>");
 
-                            String userName = user.getName();
-                            out.write("<td>" + userName + "</td>");
+                            String projectName = project.getName();
+                            out.write("<td>" + projectName + "</td>");
 
-                            String userLogin = user.getLogin();
-                            out.write("<td>" + userLogin + "</td>");
-
-                            Date userDate = user.getRegistrationDate();
-                            if (userDate != null) {
+                            Date projectDate = project.getDate();
+                            if (projectDate != null) {
                                 SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-                                String date = sdf.format(userDate);
+                                String date = sdf.format(projectDate);
                                 out.write("<td>" + date + "</td>");
                             }
 
-                            String userAdmin = user.getAdmin();
-                            out.write("<td>" + userAdmin + "</td>");
+                            String projectStatus = project.getStatus();
+                            out.write("<td>" + projectStatus + "</td>");
 
                             out.write("</tr>");
                         }
@@ -88,13 +93,12 @@
             </table>
             <br>
 
-
             <table> 
                 <tr>
                     <td>
-                        <form action="user-operations.jsp">
+                        <form action="projects-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> User operations
+                                <span class="glyphicon glyphicon-folder-close"></span> Projects operations
                             </button>
                         </form>
                     </td>

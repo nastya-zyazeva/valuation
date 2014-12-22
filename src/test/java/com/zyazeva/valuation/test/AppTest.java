@@ -1,7 +1,9 @@
 package com.zyazeva.valuation.test;
 
 import com.zyazeva.SpringFactory;
+import com.zyazeva.valuation.model.Project;
 import com.zyazeva.valuation.model.User;
+import com.zyazeva.valuation.service.ProjectService;
 import com.zyazeva.valuation.service.UserService;
 import java.util.Date;
 import static org.junit.Assert.fail;
@@ -56,5 +58,19 @@ public class AppTest {
 
         userService.deleteUser(user);
         System.out.println("Delete user done!");
+        
+        // Project service test. -----------------------------------------------       
+        System.out.println("Project service test.");
+        ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
+        Project project = new Project();
+        project.setId(0);
+        project.setName("Project site for caffee");
+        project.setStatus("active");
+        
+        projectService.createProject(project);
+        System.out.println("create project done. Project id: " + project.getId());
+        
+        projectService.deleteProject(project);
+         System.out.println("Delete project done!");
     }
 }
