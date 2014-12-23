@@ -13,5 +13,8 @@
     
     <bean id="projectService"
           class="com.zyazeva.valuation.service.implementation.ProjectServiceImplementation"/>
+    
+    <bean id="taskService"
+          class="com.zyazeva.valuation.service.implementation.TaskServiceImplementation"/>
 
 </beans>

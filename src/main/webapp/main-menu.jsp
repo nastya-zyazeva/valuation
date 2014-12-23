@@ -41,11 +41,21 @@
                     <th>Description</th>
                     <th>Menu</th>
                 <tr>
-                    <td>Statistic</td>
+                    <td>Current user projects</td>
                     <td>
                         <form action="projects-menu.jsp">
                             <button class="btn btn-info btn-block" type="submit">
                                 <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> Projects menu
+                            </button> 
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Current user tasks</td>
+                    <td>
+                        <form action="tasks-menu.jsp">
+                            <button class="btn btn-info btn-block" type="submit">
+                                <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Tasks menu
                             </button> 
                         </form>
                     </td>

@@ -1,5 +1,5 @@
-<%@page import="com.zyazeva.SpringFactory"%>
 <%@page import="com.zyazeva.valuation.model.User"%>
+<%@page import="com.zyazeva.SpringFactory"%>
 <%@page import="com.zyazeva.SessionBean"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
         <script src="resources/js/bootstrap.min.js"></script>
         <link href="resources/css/bank.css" rel="stylesheet">
 
-        <title>Projects operations page</title>
+        <title>Tasks operations page</title>
     </head>
     <body>
         <div class="container">
@@ -35,8 +35,12 @@
 
             </h4>
             <br>
-            <form class="form-signin" method="GET" action="/valuation/webresources/projects/create">
-                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name">   
+            <form class="form-signin" method="GET" action="/valuation/webresources/tasks/create">
+                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name">
+                <input name = "paramDescriprion" type="text" id="login" class="form-control" placeholder="description">
+                <input name = "paramHours" type="text" id="login" class="form-control" placeholder="hours">
+                <input name = "paramMen" type="text" id="login" class="form-control" placeholder="men">
+                <input name = "paramBalance" type="text" id="login" class="form-control" placeholder="balance">                
                 <br>          
 
                 <table>
@@ -44,7 +48,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Create new project
+                                <span class="glyphicon glyphicon-plus"></span> Create new task
                             </button>
                             </form>
                         </td>
@@ -55,7 +59,7 @@
                         <td>
                             <form action="projects-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to users menu
+                                    <span class="glyphicon glyphicon-briefcase"></span> Back to task menu
                                 </button>
                             </form>
                         </td>

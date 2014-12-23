@@ -11,5 +11,6 @@
     
     <mapping class="com.zyazeva.valuation.model.User" />
     <mapping class="com.zyazeva.valuation.model.Project" />
+    <mapping class="com.zyazeva.valuation.model.Task" />
   </session-factory>
 </hibernate-configuration>

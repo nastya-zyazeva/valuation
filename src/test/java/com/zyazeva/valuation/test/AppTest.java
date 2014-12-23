@@ -2,8 +2,10 @@ package com.zyazeva.valuation.test;
 
 import com.zyazeva.SpringFactory;
 import com.zyazeva.valuation.model.Project;
+import com.zyazeva.valuation.model.Task;
 import com.zyazeva.valuation.model.User;
 import com.zyazeva.valuation.service.ProjectService;
+import com.zyazeva.valuation.service.TaskService;
 import com.zyazeva.valuation.service.UserService;
 import java.util.Date;
 import static org.junit.Assert.fail;
@@ -58,7 +60,7 @@ public class AppTest {
 
         userService.deleteUser(user);
         System.out.println("Delete user done!");
-        
+
         // Project service test. -----------------------------------------------       
         System.out.println("Project service test.");
         ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
@@ -66,11 +68,29 @@ public class AppTest {
         project.setId(0);
         project.setName("Project site for caffee");
         project.setStatus("active");
-        
+
         projectService.createProject(project);
         System.out.println("create project done. Project id: " + project.getId());
-        
+
         projectService.deleteProject(project);
-         System.out.println("Delete project done!");
+        System.out.println("Delete project done!");
+
+        // Task service test. -----------------------------------------------       
+        System.out.println("Task service test.");
+        TaskService taskService = (TaskService) SpringFactory.getspringApplicationContext().getBean("taskService");
+        Task task = new Task();
+        task.setId(0);
+        task.setName("Early development");
+        task.setDescription("Begining of the project development.");
+        task.setHours(100);
+        task.setMen(3);
+        task.setBalance(30000);
+        task.setUserId(0);
+
+        taskService.createTask(task);
+        System.out.println("create task done. Task id: " + project.getId());
+
+        taskService.deleteTask(task);
+        System.out.println("Delete task done!");
     }
 }
