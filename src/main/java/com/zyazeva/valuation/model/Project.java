@@ -40,7 +40,7 @@ public class Project {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "id")
+    @Column(name = "ID")
     public int getId() {
         return id;
     }

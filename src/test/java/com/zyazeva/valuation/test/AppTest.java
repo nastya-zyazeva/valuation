@@ -1,9 +1,11 @@
 package com.zyazeva.valuation.test;
 
 import com.zyazeva.SpringFactory;
+import com.zyazeva.valuation.model.Link;
 import com.zyazeva.valuation.model.Project;
 import com.zyazeva.valuation.model.Task;
 import com.zyazeva.valuation.model.User;
+import com.zyazeva.valuation.service.LinkService;
 import com.zyazeva.valuation.service.ProjectService;
 import com.zyazeva.valuation.service.TaskService;
 import com.zyazeva.valuation.service.UserService;
@@ -88,9 +90,26 @@ public class AppTest {
         task.setUserId(0);
 
         taskService.createTask(task);
-        System.out.println("create task done. Task id: " + project.getId());
+        System.out.println("Create task done. Task id: " + task.getId());
 
         taskService.deleteTask(task);
         System.out.println("Delete task done!");
+        
+        // Link service test. -----------------------------------------------       
+        System.out.println("Link service test.");
+        LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
+        Link link = new Link();
+        link.setId(0);
+        link.setProjectId(0);
+        link.setTaskId(0);
+        link.setUserId(0);
+        
+
+        linkService.createLink(link);
+        System.out.println("Create link done. Link id: " + project.getId());
+
+        linkService.deleteLink(link);
+        System.out.println("Delete task done!");
+        
     }
 }

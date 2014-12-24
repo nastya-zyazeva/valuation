@@ -15,4 +15,5 @@ public interface TaskService {
 
     List getAllTasks();
 
+    Task getTasktByName(String name);
 }

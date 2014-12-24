@@ -60,6 +60,16 @@
                         </form>
                     </td>
                 </tr>
+                                <tr>
+                    <td>Current user links</td>
+                    <td>
+                        <form action="links-menu.jsp">
+                            <button class="btn btn-info btn-block" type="submit">
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Links menu
+                            </button> 
+                        </form>
+                    </td>
+                </tr>
 
                 <%
                     if (user != null) {

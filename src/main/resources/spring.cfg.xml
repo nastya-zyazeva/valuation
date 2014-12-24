@@ -16,5 +16,8 @@
     
     <bean id="taskService"
           class="com.zyazeva.valuation.service.implementation.TaskServiceImplementation"/>
+    
+    <bean id="linkService"
+          class="com.zyazeva.valuation.service.implementation.LinkServiceImplementation"/>
 
 </beans>
