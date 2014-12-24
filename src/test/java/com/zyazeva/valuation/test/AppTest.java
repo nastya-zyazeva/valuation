@@ -3,10 +3,12 @@ package com.zyazeva.valuation.test;
 import com.zyazeva.SpringFactory;
 import com.zyazeva.valuation.model.Link;
 import com.zyazeva.valuation.model.Project;
+import com.zyazeva.valuation.model.Stat;
 import com.zyazeva.valuation.model.Task;
 import com.zyazeva.valuation.model.User;
 import com.zyazeva.valuation.service.LinkService;
 import com.zyazeva.valuation.service.ProjectService;
+import com.zyazeva.valuation.service.StatService;
 import com.zyazeva.valuation.service.TaskService;
 import com.zyazeva.valuation.service.UserService;
 import java.util.Date;
@@ -110,6 +112,20 @@ public class AppTest {
 
         linkService.deleteLink(link);
         System.out.println("Delete task done!");
+        
+        // Stat service test. -----------------------------------------------       
+        System.out.println("Link service test.");
+        StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+        Stat stat = new Stat();
+        stat.setId(0);
+        stat.setDate(new Date());
+        stat.setDescription("First stat record!");
+
+        statService.createStat(stat);
+        System.out.println("Create stat done. Stat id: " + stat.getId());
+
+        statService.deleteStat(stat);
+        System.out.println("Delete stat done!");
         
     }
 }

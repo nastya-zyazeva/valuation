@@ -60,7 +60,7 @@
                         </form>
                     </td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Current user links</td>
                     <td>
                         <form action="links-menu.jsp">
@@ -70,6 +70,16 @@
                         </form>
                     </td>
                 </tr>
+                <tr>
+                    <td>Statistic for all</td>
+                    <td>
+                        <form action="stats-menu.jsp">
+                            <button class="btn btn-info btn-block" type="submit">
+                                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> Statistics menu
+                            </button> 
+                        </form>
+                    </td>
+                </tr>                
 
                 <%
                     if (user != null) {

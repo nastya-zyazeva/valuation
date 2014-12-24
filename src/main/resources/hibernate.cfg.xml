@@ -13,5 +13,6 @@
     <mapping class="com.zyazeva.valuation.model.Project" />
     <mapping class="com.zyazeva.valuation.model.Task" />
     <mapping class="com.zyazeva.valuation.model.Link" />
+    <mapping class="com.zyazeva.valuation.model.Stat" />
   </session-factory>
 </hibernate-configuration>

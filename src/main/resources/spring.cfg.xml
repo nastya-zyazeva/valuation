@@ -19,5 +19,8 @@
     
     <bean id="linkService"
           class="com.zyazeva.valuation.service.implementation.LinkServiceImplementation"/>
+    
+    <bean id="statService"
+          class="com.zyazeva.valuation.service.implementation.StatServiceImplementation"/>
 
 </beans>
