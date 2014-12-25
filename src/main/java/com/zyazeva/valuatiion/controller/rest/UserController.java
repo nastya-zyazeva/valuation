@@ -2,7 +2,9 @@ package com.zyazeva.valuatiion.controller.rest;
 
 import com.zyazeva.SessionBean;
 import com.zyazeva.SpringFactory;
+import com.zyazeva.valuation.model.Stat;
 import com.zyazeva.valuation.model.User;
+import com.zyazeva.valuation.service.StatService;
 import com.zyazeva.valuation.service.UserService;
 import java.net.URISyntaxException;
 import java.util.Date;
@@ -71,6 +73,14 @@ public class UserController {
             
             SessionBean sessionBean = (SessionBean) SpringFactory.getspringApplicationContext().getBean("sessionBean");
             User currentUser = sessionBean.getCurrentUser();
+            
+            Stat stat = new Stat();
+            stat.setId(0);
+            stat.setDescription("User " + currentUser.getName() + " create a new user with id: " + user.getId());
+            stat.setDate(new Date());
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+            statService.createStat(stat);
 
             location = new java.net.URI("../user-menu.jsp");
 

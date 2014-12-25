@@ -3,8 +3,10 @@ package com.zyazeva.valuatiion.controller.rest;
 import com.zyazeva.SessionBean;
 import com.zyazeva.SpringFactory;
 import com.zyazeva.valuation.model.Project;
+import com.zyazeva.valuation.model.Stat;
 import com.zyazeva.valuation.model.User;
 import com.zyazeva.valuation.service.ProjectService;
+import com.zyazeva.valuation.service.StatService;
 import com.zyazeva.valuation.service.UserService;
 import java.net.URISyntaxException;
 import java.util.Date;
@@ -37,7 +39,15 @@ public class ProjectsController {
             project.setUserId(currentUser.getId());
 
             ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
-            projectService.createProject(project);
+            projectService.createProject(project);            
+                        
+            Stat stat = new Stat();
+            stat.setId(0);
+            stat.setDescription("User " + currentUser.getName() + " create a new project with id: " + project.getId());
+            stat.setDate(new Date());
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+            statService.createStat(stat);
 
             location = new java.net.URI("../projects-menu.jsp");
 

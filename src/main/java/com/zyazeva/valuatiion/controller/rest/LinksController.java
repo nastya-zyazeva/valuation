@@ -4,12 +4,15 @@ import com.zyazeva.SessionBean;
 import com.zyazeva.SpringFactory;
 import com.zyazeva.valuation.model.Link;
 import com.zyazeva.valuation.model.Project;
+import com.zyazeva.valuation.model.Stat;
 import com.zyazeva.valuation.model.Task;
 import com.zyazeva.valuation.model.User;
 import com.zyazeva.valuation.service.LinkService;
 import com.zyazeva.valuation.service.ProjectService;
+import com.zyazeva.valuation.service.StatService;
 import com.zyazeva.valuation.service.TaskService;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.GET;
@@ -37,16 +40,28 @@ public class LinksController {
 
             ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
             Project project = projectService.getProjectByName(projectName);
-            link.setProjectId(project.getId());
+            if (project != null){
+                link.setProjectId(project.getId());
+            }
 
             TaskService taskService = (TaskService) SpringFactory.getspringApplicationContext().getBean("taskService");
             Task task = taskService.getTasktByName(taskName);
-            link.setTaskId(task.getId());
+            if (task != null){
+                link.setTaskId(task.getId());
+            }
 
             link.setUserId(currentUserId);
 
             LinkService linkService = (LinkService) SpringFactory.getspringApplicationContext().getBean("linkService");
             linkService.createLink(link);
+            
+            Stat stat = new Stat();
+            stat.setId(0);
+            stat.setDescription("User " + currentUser.getName() + " create a new link with id: " + link.getId());
+            stat.setDate(new Date());
+            
+            StatService statService = (StatService) SpringFactory.getspringApplicationContext().getBean("statService");
+            statService.createStat(stat);
 
             location = new java.net.URI("../links-menu.jsp");
 
