@@ -9,7 +9,7 @@
 
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <script src="resources/js/bootstrap.min.js"></script>
-        <link href="resources/css/bank.css" rel="stylesheet">
+        <link href="resources/css/valuation.css" rel="stylesheet">
 
         <title>Tasks operations page</title>
     </head>

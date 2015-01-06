@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users operations menu</h3>
+            <h3>Links operations menu</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>

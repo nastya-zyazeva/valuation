@@ -1,4 +1,4 @@
-package com.zyazeva.valuatiion.controller.rest;
+package com.zyazeva.valuation.controller.rest;
 
 import com.zyazeva.SessionBean;
 import com.zyazeva.SpringFactory;
