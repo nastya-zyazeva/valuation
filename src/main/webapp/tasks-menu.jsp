@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Меню задач для проектов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -41,12 +41,12 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Task id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Hours</th>
-                    <th>Men</th>
-                    <th>Balance</th>
+                    <th>Номер</th>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Часы</th>
+                    <th>Люди</th>
+                    <th>Баланс</th>
                 </tr>
                 <%
                     TaskService taskService = (TaskService) SpringFactory.getspringApplicationContext().getBean("taskService");
@@ -98,7 +98,7 @@
                     <td>
                         <form action="tasks-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-briefcase"></span> Tasks operations
+                                <span class="glyphicon glyphicon-briefcase"></span> Действия над задачами
                             </button>
                         </form>
                     </td>
@@ -108,7 +108,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

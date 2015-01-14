@@ -20,7 +20,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users menu</h3>
+            <h3>Меню проектов</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -44,10 +44,10 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>User id</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Status</th>
+                    <th>Номер</th>
+                    <th>Название</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
                 </tr>
                 <%
                     ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
@@ -98,7 +98,7 @@
                     <td>
                         <form action="projects-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-folder-close"></span> Projects operations
+                                <span class="glyphicon glyphicon-folder-close"></span> Действия над проектами
                             </button>
                         </form>
                     </td>
@@ -108,7 +108,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

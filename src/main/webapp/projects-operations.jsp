@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users operations menu</h3>
+            <h3>Меню действий над проектами</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,7 +36,7 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/valuation/webresources/projects/create">
-                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name">   
+                <input name = "paramName" type="text" id="login" class="form-control" placeholder="название">   
                 <br>          
 
                 <table>
@@ -44,7 +44,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-user"></span> Create new project
+                                <span class="glyphicon glyphicon-user"></span> Создать новый проект
                             </button>
                             </form>
                         </td>
@@ -55,7 +55,7 @@
                         <td>
                             <form action="projects-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-user"></span> Back to users menu
+                                    <span class="glyphicon glyphicon-user"></span> Вернуться в меню проектов
                                 </button>
                             </form>
                         </td>

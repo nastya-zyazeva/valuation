@@ -22,7 +22,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Links menu</h3>
+            <h3>Меню назначений</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -47,12 +47,12 @@
 
             <table class="table table-striped">
                 <tr>
-                    <th>Link id</th>
-                    <th>Project name</th>
-                    <th>Task name</th>
-                    <th>Hours</th>
-                    <th>Men</th>
-                    <th>Balance</th>
+                    <th>Номер</th>
+                    <th>Проект</th>
+                    <th>Задача</th>
+                    <th>Часы</th>
+                    <th>Люди</th>
+                    <th>Баланс</th>
                 </tr>
                 <%
                     ProjectService projectService = (ProjectService) SpringFactory.getspringApplicationContext().getBean("projectService");
@@ -78,7 +78,7 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Project in list number: " + i + "</td>");
+                            out.write("<td>" + "Проект в списке №: " + i + "</td>");
                             out.write("<td>" + "" + "</td>");
                             out.write("<td>" + "" + "</td>");
                             out.write("</tr>");
@@ -109,8 +109,8 @@
                             }
 
                             out.write("<tr>");
-                            out.write("<td>" + "Total hours: " + totalHours + "</td>");
-                            out.write("<td>" + "Total balance " + totalBalance + "</td>");
+                            out.write("<td>" + "Всего часов: " + totalHours + "</td>");
+                            out.write("<td>" + "Всего баланс: " + totalBalance + "</td>");
                             out.write("<td>" + "" + "</td>");
                             out.write("</tr>");
 
@@ -127,7 +127,7 @@
                     <td>
                         <form action="links-operations.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-link"></span> Links operations
+                                <span class="glyphicon glyphicon-link"></span> Действия с назначениями
                             </button>
                         </form>
                     </td>
@@ -137,7 +137,7 @@
                     <td>
                         <form action="main-menu.jsp">
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-home"></span> Back to main menu
+                                <span class="glyphicon glyphicon-home"></span> Вернуться в главное меню
                             </button>
                         </form>
                     </td>

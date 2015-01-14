@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h3>Users operations menu</h3>
+            <h3>Меню действий над задачами</h3>
             <br>
             <h4>
                 <span class="glyphicon glyphicon-user"></span>
@@ -36,11 +36,11 @@
             </h4>
             <br>
             <form class="form-signin" method="GET" action="/valuation/webresources/tasks/create">
-                <input name = "paramName" type="text" id="login" class="form-control" placeholder="name">
-                <input name = "paramDescriprion" type="text" id="login" class="form-control" placeholder="description">
-                <input name = "paramHours" type="text" id="login" class="form-control" placeholder="hours">
-                <input name = "paramMen" type="text" id="login" class="form-control" placeholder="men">
-                <input name = "paramBalance" type="text" id="login" class="form-control" placeholder="balance">                
+                <input name = "paramName" type="text" id="login" class="form-control" placeholder="название">
+                <input name = "paramDescriprion" type="text" id="login" class="form-control" placeholder="описание">
+                <input name = "paramHours" type="text" id="login" class="form-control" placeholder="часы">
+                <input name = "paramMen" type="text" id="login" class="form-control" placeholder="люди">
+                <input name = "paramBalance" type="text" id="login" class="form-control" placeholder="баланс">                
                 <br>          
 
                 <table>
@@ -48,7 +48,7 @@
                         <td>
 
                             <button class="btn btn-info" type="submit">
-                                <span class="glyphicon glyphicon-plus"></span> Create new task
+                                <span class="glyphicon glyphicon-plus"></span> Создать новую задачу
                             </button>
                             </form>
                         </td>
@@ -59,7 +59,7 @@
                         <td>
                             <form action="projects-menu.jsp">
                                 <button class="btn btn-info">
-                                    <span class="glyphicon glyphicon-briefcase"></span> Back to task menu
+                                    <span class="glyphicon glyphicon-briefcase"></span> Вернуться в меню задач
                                 </button>
                             </form>
                         </td>
